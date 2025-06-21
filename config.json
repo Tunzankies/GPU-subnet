@@ -1,0 +1,13 @@
+{
+  "refCode": [
+    "DZU2UY",
+    "DZU2UY"
+  ],
+  "checkProxy": true,
+  "protocol": "http",
+  "numberThread": 1,
+  "numberRef": 1,
+  "newData": false,
+  "social": true,
+  "draw": true
+}

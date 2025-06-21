@@ -1,0 +1,49 @@
+1. Điều chỉnh config.json
+
+	"refCode": ["LvWlZ4nW", "LvWlZ4nW"], // mã ref nhiều tài khoản
+	"checkProxy": true, // kiểm tra proxy trước khi chạy
+	"protocol": "http", // loại proxy (socks, http)
+	"numberThread": 1, // số luồng
+	"numberRef": 1, // số lượng ref
+	"waitTime": 7200, // thời gian chờ (giây)
+	"newData": true, // làm mới file data.json khi chạy (xóa toàn bộ tài khoản cũ)
+	"social": true // làm task X của kèo (nếu bật vui lòng chịu trách nhiệm khi kèo check sybill)
+	"draw": true // auto mở hòm
+
+* true = bật
+* false = tắt
+
+2. Điều chỉnh file
+- proxy.txt: định dạng ip:port:user:pass (mỗi proxy 1 dòng)
+- accounts.txt: mỗi dòng 1 tài khoản định dạng privateKey
+- X.txt: mỗi dòng để 1 auth_token của tài khoản X
+- problems.txt: mỗi dòng để 1 vấn đề cho câu hỏi "Describe the biggest challenge in your life or community. What real problem do you think is worth solving? Be specific about the issue, who it affects, and why it matters..." (nên dùng chatGPT để gen)
+- solutions.txt: mỗi dòng để 1 vấn đề cho giải pháp "Design your solution using AI, crypto, or decentralized coordination. Explain how your approach would solve the problem, what makes it unique, and how it would work in practice..." (nên dùng chatGPT để gen)
+
+3. Cách chạy
+***-- Win --***
+- Chạy gpu.exe sau khi đã chỉnh config
+
+***-- Linux --***
+- Chạy lệnh ./gpu sau khi đã chỉnh config
+
+4. Chế độ
+***-- 1. Đăng ký tài khoản! --***
+- Chế độ này sẽ đăng ký tài khoản
+- Acc tạo thành công sẽ xuất ra file accounts-<dd-MM-yyyy>.txt, accounts-<dd-MM-yyyy>.xlsx 
+
+--> Lưu ý: dd-MM-yyyy là ngày tháng năm hiện tại
+
+***-- 2. Đăng nhập! --***
+- Chế độ này sẽ lấy tài khoản trong accounts.txt để chạy ra file data.json
+
+***-- 3. Làm nhiệm vụ! --***
+- Chế độ này sẽ lấy tài khoản trong data.json để chạy
+- Chế độ này sẽ xuất dữ liệu ra các file:
+  + dApp.json, dApp.xlsx: chứa tài khoản đăng ký ở trang https://dapp.gpu.net
+  + solWallet.json, solWallet.xlsx: chứa ví sol liên kết vào kèo
+
+***-- 4. Liên kết X! --***
+- Chế độ này sẽ lấy tài khoản trong data.json để chạy
+- Yêu cầu có auth_token
+- Acc liên kết thành công sẽ xuất ra file X.json, bindData.xlsx
